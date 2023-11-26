@@ -1,6 +1,8 @@
 # Analysis of EV Adoption in California
 
-Exploring the dataset can reveal various patterns and insights related to electric vehicle adoption, demographic characteristics, and economic factors. Here are some possible patterns to explore and questions to find answers for:
+---
+
+Exploring the dataset can reveal various patterns and insights related to electric vehicle adoption, demographic characteristics, and economic factors. Here are some patterns we tried to explore and questions we tried to find answers for:
 
 1. Electric Vehicle Adoption Patterns:
   - Question: How does the distribution of electric vehicles vary across different ZIP codes?
