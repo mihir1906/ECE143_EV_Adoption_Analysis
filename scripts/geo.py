@@ -6,9 +6,10 @@ def plot_geospatial_data(file_path: str, data_dict: str, join_col_name: str, val
     '''
     Function that plots geospatial information on the california map.
     
-    Args:
+    Parameters:
         file_path (str): Path to the California shapefile (e.g., "tl_2020_us_state_500m.shp").
         data_dict (dict): Dictionary containing the geospatial data to plot. Eg. {zip_code: num_ev_cars}.
+        marker_data (pd.DataFrame): Data to show popup information for each zip code.
         join_col_name (str): Name of the column in the data_dict that matches the join column in the shapefile.
         value_name (str): Name of the column in the data_dict that contains the values to be plotted.
         output_file_name (str): Path to the output html file
@@ -23,20 +24,33 @@ def plot_geospatial_data(file_path: str, data_dict: str, join_col_name: str, val
     
     # Load California shapefile
     california_geojson = gpd.read_file(file_path).to_crs("EPSG:4326").to_json()
+    marker_data = gpd.read_file(file_path)
+    marker_data = marker_data.dropna()
+    marker_data.rename(columns={'Total_Cars': 'Total Cars', 'Total_EV': 'Total EVs', 'EV_perc': 'EV Percentage', 'Median_Hou': 'Median Income' , 'Total_Popu': 'Total Population'}, inplace=True)
     california_center = [36.7783, -119.4179]
-    california_map = folium.Map(location=california_center, zoom_start=6)
-
-    # Plot data on the map using folium.Choropleth
+    california_map = folium.Map(location=california_center, zoom_start=6, tooltip = 'This tooltip will appear on hover')
+    
     folium.Choropleth(
         geo_data=california_geojson,
         name='choropleth',
         data=data_dict,
         columns=[join_col_name, value_name],
         key_on=f'feature.properties.{join_col_name}',
-        fill_color='YlGnBu',
+        fill_color='YlOrRd',
         fill_opacity=0.7,
         line_opacity=0.2,
         legend_name=value_name
+    ).add_to(california_map)
+
+    # Plot data on the map using folium.Choropleth
+    folium.GeoJson(
+        data=marker_data,
+        name='choropleth',
+        style_function=lambda x: {'fillColor': 'YlOrRd', 'fillOpacity': 0.1, 'color': 'white', 'weight': 0.2},
+        highlight_function=lambda x: {'weight': 1, 'fillOpacity': 0.5},
+        smooth_factor=2.0,
+        popup=folium.GeoJsonPopup(marker_data.drop(columns=['geometry']).columns.tolist()),
+        tooltip=folium.GeoJsonTooltip(['ZIP', 'City', 'Total Cars', 'Total EVs', 'EV Percentage', 'Median Income', 'Total Population']),
     ).add_to(california_map)
 
     # Save the map
