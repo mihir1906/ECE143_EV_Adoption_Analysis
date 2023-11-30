@@ -26,3 +26,4 @@ def scatter_plot(df: pd.DataFrame, x_col: str, y_col: str, xaxis_title: str, yax
                     xaxis_title=xaxis_title,
                     yaxis_title=yaxis_title)
     fig.show()
+    fig.write_html(f'results/{title}.html')

@@ -1,6 +1,6 @@
 import plotly.express as px
 
-def plot_pie_chart(val: list, name: list, title_str: str):
+def plot_pie_chart(val: list, name: list, title: str):
 	"""
 	The following function plots a pie chart.
 
@@ -17,6 +17,7 @@ def plot_pie_chart(val: list, name: list, title_str: str):
 	assert isinstance(val, list)
 	assert isinstance(val, str)
 
-	fig = px.pie(values=val, names= name, title=title_str)
+	fig = px.pie(values=val, names= name, title=title)
 	fig.update_traces(textinfo='percent+label', hole=0.3)
 	fig.show()
+	fig.write_html(f'results/{title}.html')

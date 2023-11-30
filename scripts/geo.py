@@ -56,7 +56,6 @@ def plot_geospatial_data(file_path: str, data_dict: str, join_col_name: str, val
     # Save the map
     california_map.save(output_file_name)
 
-    return
 
 if __name__ == '__main__':
     file_path = 'California_Zip_Codes/California_Zip_Codes.shp'

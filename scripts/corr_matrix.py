@@ -37,3 +37,4 @@ def plot_correlation_matrix(df: pd.DataFrame):
 
     # Show the plot
     fig.show()
+    fig.write_html(f'results/corr.html')
