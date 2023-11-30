@@ -24,32 +24,7 @@ Exploring the dataset can reveal various patterns and insights related to electr
     - Question: What are the preferences for different types of alternative fuel vehicles?
     - Patterns to Explore: Compare the distribution of electric, hybrid, and other alternative fuel vehicles. Identify regions with a higher concentration of specific fuel types.
 
-5. Geospatial Trends:
-
-    - Question: Are there geographical patterns in electric vehicle adoption?
-    - Patterns to Explore: Create maps to visualize the spatial distribution of electric vehicles. Identify clusters of ZIP codes with similar characteristics.
-
-6. Temporal Trends:
-
-    - Question: How has electric vehicle adoption changed over time?
-    - Patterns to Explore: Analyze trends in electric vehicle registration from previous years, if available. Identify any temporal patterns or shifts in adoption rates.
-
-7. Predictive Modeling:
+5. Predictive Modeling:
 
     - Question: Can we predict electric vehicle adoption based on demographic and economic factors?
     - Patterns to Explore: Build models to predict Total_EV or EV_perc. Evaluate the significance of different features in predicting electric vehicle adoption.
-
-8. Community Profiles:
-
-    - Question: What profiles can be created for communities based on car types and demographics?
-    - Patterns to Explore: Cluster ZIP codes into groups with similar characteristics. Create profiles based on the predominant car types and demographic features.
-
-9. Ethical Considerations:
-
-    - Question: Are there ethical considerations related to the analysis of demographic data?
-    - Patterns to Explore: Evaluate the potential biases in the dataset and analysis. Consider the ethical implications of drawing conclusions based on demographic information.
-
-10. Environmental Impact:
-
-    - Question: Is there a correlation between the adoption of electric vehicles and environmental factors?
-    - Patterns to Explore: Investigate if areas with higher electric vehicle adoption rates have lower emissions. Explore the potential environmental benefits of electric vehicle adoption.
