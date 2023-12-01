@@ -17,4 +17,8 @@ def clean_data(data_set: pd.DataFrame):
     data_set["Median_Household_Income"].fillna(np.mean(data_set["Median_Household_Income"]), inplace = True)
     data_set["Zillow_Home_Value_Index"].fillna(np.mean(data_set["Zillow_Home_Value_Index"]), inplace = True)
     return data_set
+
+
+def merge_dataframes(df1: pd.DataFrame, df2: pd.DataFrame):
+    return
     

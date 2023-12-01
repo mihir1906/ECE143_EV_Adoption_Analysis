@@ -1,23 +1,24 @@
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error, r2_score
 import pandas as pd
 
-def train_model(df: pd.DataFrame, model, model_name):
+def train_model(df: pd.DataFrame, model, model_name: str):
     """
     Train a regression model on the given DataFrame and return feature importance.
 
     Parameters:
-    - df (pd.DataFrame): The DataFrame containing the dataset.
-    - model: The regression model to be trained.
-    - model_name (str): The name of the model ('Linear Regression' or 'Random Forest Regressor').
+        df (pd.DataFrame): The DataFrame containing the dataset.
+        model: The regression model to be trained.
+        model_name (str): The name of the model ('Linear Regression' or 'Random Forest Regressor').
 
     Returns:
-    - dict: A dictionary containing feature names and their corresponding importance scores.
-    - pd.DataFrame: Scaled training features (X_train_scaled).
-    - pd.Series: Training labels (y_train).
+        feature_importance   (dict): A dictionary containing feature names and their corresponding importance scores.
+        r2  (float): R2 Score for the model on test data
+        mse (float): Mean Squared Error for the model on test data
+        scaler  : The scaler that was used to scale the train data
+        model   : The trained model instance
+    
     """
     assert isinstance(df, pd.DataFrame), "Input 'df' must be a DataFrame."
     assert model_name in ['Linear Regression', 'Random Forest Regressor'], "Invalid model_name. Use 'Linear Regression' or 'Random Forest Regressor'."
@@ -45,4 +46,4 @@ def train_model(df: pd.DataFrame, model, model_name):
     elif model_name == 'Random Forest Regressor':
         feature_importance_dict = dict(zip(X.columns, model.feature_importances_))
     
-    return feature_importance_dict, scaler, X_train_scaled, y_train, model
+    return feature_importance_dict, r2, mse, scaler, model
