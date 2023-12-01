@@ -32,6 +32,33 @@ We delve into the preferences for different types of alternative fuel vehicles, 
 
 In the final leg of our project, we embark on predictive modeling. Leveraging the power of linear regression and random forest regression, we attempt to forecast electric vehicle adoption based on a combination of demographic and economic factors. This predictive analysis adds a forward-looking dimension to our exploration.
 
+We consider 2 Machine learning models: 1. Linear Regression 2. Random Forest Regressor. We use only the demographic and economic features for the prediction. As we earlier explored that household income and level of education are highly correlated with eac other we also try to study the inmpact of using both these features or either one of these features for predictions. The experimental results are as follows
+
+![Model Comparison](images/question5/comparison.png)
+
+| Model                   | Features                   | R2 Score | Mean Squared Error (MSE) |
+|-------------------------|----------------------------|----------|---------------------------|
+| Linear Regression       | All features               | 0.84     | 0.96                      |
+| Linear Regression       | Drop Median Household Income | 0.79   | 1.23                      |
+| Linear Regression       | Drop Level of Education     | 0.69     | 1.86                      |
+| Random Forest Regression | All features               | 0.86     | 0.82                      |
+| Random Forest Regression | Drop Median Household Income | 0.84   | 0.97                      |
+| Random Forest Regression | Drop Level of Education     | 0.74     | 1.56                      |
+
+**Insights:**
+
+1. **Model Performance:** Both Linear Regression and Random Forest Regression show promising performance, with R2 scores ranging from 0.69 to 0.86. These scores indicate a reasonably good fit of the models to the data.
+
+2. **Feature Importance:** The models consistently perform well when using all features. However, dropping either the "Median Household Income" or "Level of Education" leads to a decrease in model performance. This suggests that both these features contribute significantly to predicting electric vehicle adoption.
+
+3. **Correlation Impact:** The observed high correlation between household income and education level does not lead to multicollinearity issues affecting model performance. Including both features seems beneficial, emphasizing their independent impact on predicting EV adoption.
+
+4. **Random Forest Advantage:** Random Forest Regression consistently outperforms Linear Regression across all scenarios. The ensemble nature of Random Forest allows it to capture complex relationships in the data, contributing to its superior predictive ability.
+
+5. **Feature Drop Impact:** The drop in R2 scores and the increase in MSE when removing features indicate the importance of considering multiple demographic and economic factors for accurate predictions. A holistic approach considering various aspects yields better results than relying on a single feature.
+
+6. **Feature Importance:** For both the models Linear Regression as well as Random Forest Regressor the Median Household Income and Level of Education are the Most importance features.
+
 ## Project Methodology
 
 Throughout the project, we employ a blend of geospatial analysis, correlation studies, scatter plots, and predictive modeling to comprehensively address each question. The diversity in our analytical approaches ensures a holistic understanding of the factors influencing electric vehicle adoption.
