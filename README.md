@@ -10,6 +10,8 @@ Welcome to the "Electric Vehicle Adoption Analysis" project! In this comprehensi
 
 We kick off our analysis by investigating the distribution of electric vehicles across different ZIP codes in California. By mapping and visualizing this distribution, we aim to identify regions with varying levels of EV adoption.
 
+![Electric Vehicle](images/question1/all_areas.png)
+
 ### Q2: Demographic Correlations
 
 Moving beyond spatial analysis, we explore potential correlations between demographic characteristics and electric vehicle adoption. Specifically, we examine the influence of ethnicity and education level on the adoption of EVs, unraveling interesting insights into the societal dynamics of EV ownership.
