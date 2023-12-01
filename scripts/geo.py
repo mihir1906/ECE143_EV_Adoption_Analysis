@@ -38,7 +38,7 @@ def plot_geospatial_data(file_path: str, data_dict: str, join_col_name: str, val
         key_on=f'feature.properties.{join_col_name}',
         fill_color='YlOrRd',
         fill_opacity=0.7,
-        line_opacity=0.2,
+        line_opacity=0.1,
         legend_name=value_name
     ).add_to(california_map)
 

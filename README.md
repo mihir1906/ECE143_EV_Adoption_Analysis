@@ -16,9 +16,13 @@ We kick off our analysis by investigating the distribution of electric vehicles 
 
 Moving beyond spatial analysis, we explore potential correlations between demographic characteristics and electric vehicle adoption. Specifically, we examine the influence of ethnicity and education level on the adoption of EVs, unraveling interesting insights into the societal dynamics of EV ownership.
 
+![Education](images/question2/all_regions.png)
+
 ### Q3: Economic Factors
 
 Understanding the impact of economic factors on electric vehicle adoption is crucial. Our analysis involves a geographic study, correlation examination, and scatter plotting to uncover the intricate relationships between economic indicators and the prevalence of EVs.
+
+![Income](images/question3/all_regions.png)
 
 ### Q4: Fuel Types and Preferences
 
