@@ -2,7 +2,7 @@ import numpy as np
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-def plot_bar_scatter(scatter: dict, bar: dict, y_labels: list, annots: list):
+def plot_bar_scatter(scatter: dict, bar: dict, y_labels: list, annots: list, title: str):
     '''
     Function to plot a joint bar and scatter plot. The left graph will be a bar plot show distribution of data. 
     The right graph will be a scatter plot.
@@ -12,6 +12,7 @@ def plot_bar_scatter(scatter: dict, bar: dict, y_labels: list, annots: list):
         bar (dict): Data for bar plots. {"column_name": data}
         y_labels    (list): Valuess on Y-axis. i.e name of city, ZIP etc.
         annots  (list): Annotation values for scatter plot.
+        title   (str): Title of the plot.
     Returns:
         None
     '''
@@ -35,7 +36,7 @@ def plot_bar_scatter(scatter: dict, bar: dict, y_labels: list, annots: list):
         ));
     
     fig.update_layout(
-        title='Fuel Type distribution for ',
+        title=f'Fuel Type distribution for {title}',
         yaxis=dict(
             showgrid=False,
             showline=False,

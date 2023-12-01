@@ -1,6 +1,5 @@
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
 
 def scatter_plot(df: pd.DataFrame, x_col: str, y_col: str, xaxis_title: str, yaxis_title: str, title: str):
     '''
@@ -21,7 +20,7 @@ def scatter_plot(df: pd.DataFrame, x_col: str, y_col: str, xaxis_title: str, yax
     assert isinstance(y_col, str) and isinstance(xaxis_title, str) and isinstance(yaxis_title, str)
     assert x_col in list(df.columns) and y_col in list(df.columns)
     
-    fig = px.scatter(df, x=x_col, y=y_col, trendline='ols', hover_data=['City'])
+    fig = px.scatter(df, x=x_col, y=y_col, trendline='ols')
     fig.update_layout(title=title,
                     xaxis_title=xaxis_title,
                     yaxis_title=yaxis_title)

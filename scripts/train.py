@@ -3,12 +3,14 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error, r2_score
 import pandas as pd
 
-def train_model(df: pd.DataFrame, model, model_name: str):
+def train_model(df: pd.DataFrame, features: list, target_feature: str, model, model_name: str):
     """
     Train a regression model on the given DataFrame and return feature importance.
 
     Parameters:
         df (pd.DataFrame): The DataFrame containing the dataset.
+        features    (list): List of features from the datatset that you want to use for training.
+        target_feature  (str): feature that has to be predicted.
         model: The regression model to be trained.
         model_name (str): The name of the model ('Linear Regression' or 'Random Forest Regressor').
 
@@ -21,12 +23,14 @@ def train_model(df: pd.DataFrame, model, model_name: str):
     
     """
     assert isinstance(df, pd.DataFrame), "Input 'df' must be a DataFrame."
-    assert model_name in ['Linear Regression', 'Random Forest Regressor'], "Invalid model_name. Use 'Linear Regression' or 'Random Forest Regressor'."
+    assert isinstance(features, list) and isinstance(model_name, str) and isinstance(target_feature, str)
+    assert target_feature in list(df.columns)
+    assert model_name in ['Linear Regression', 'Random Forest Regression'], "Invalid model_name. Use 'Linear Regression' or 'Random Forest Regressor'."
     
-    subset_df = df[['EV_perc', 'Median_Household_Income', 'Latino_perc', 'White_perc','Asian_perc', 'Black_perc', 'BachOrHigher_perc']]
+    subset_df = df[features]
     
-    X = subset_df.drop('EV_perc', axis=1)
-    y = subset_df['EV_perc']
+    X = subset_df.drop(target_feature, axis=1)
+    y = subset_df[target_feature]
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.15, random_state=42)
 
@@ -43,7 +47,7 @@ def train_model(df: pd.DataFrame, model, model_name: str):
 
     if model_name == 'Linear Regression':
         feature_importance_dict = dict(zip(X.columns, model.coef_ / model.coef_.sum() * 100))
-    elif model_name == 'Random Forest Regressor':
+    elif model_name == 'Random Forest Regression':
         feature_importance_dict = dict(zip(X.columns, model.feature_importances_))
     
     return feature_importance_dict, r2, mse, scaler, model
