@@ -87,3 +87,4 @@ def plot_bar_scatter(scatter: dict, bar: dict, y_labels: list, annots: list, tit
     
     fig.update_layout(annotations=annotations)
     fig.show()
+    fig.write_html(f'results/{title}.html')
