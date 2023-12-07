@@ -17,6 +17,9 @@ def plot_bar_scatter(scatter: dict, bar: dict, y_labels: list, annots: list, tit
         None
     '''
     
+    assert isinstance(scatter, dict) and isinstance(bar, dict) 
+    assert isinstance(y_labels, list) and isinstance(annots, list) and isinstance(title, str)
+    
     fig = make_subplots(rows=1, cols=2, specs=[[{}, {}]], shared_xaxes=True, shared_yaxes=False, vertical_spacing=0.1)
     
     

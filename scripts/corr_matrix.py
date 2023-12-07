@@ -1,17 +1,18 @@
 import pandas as pd
 import plotly.express as px
 
-def plot_correlation_matrix(df: pd.DataFrame):
+def plot_correlation_matrix(df: pd.DataFrame, title: str):
     '''
     Function that plots the pearson correlation matrix between given features of a dataframe
     
     Parameters:
         df  (pd.DataFrame): Pandas DataFrame with feature you want to plot pearson correlation
+        title   (str): Title of the correlation plot
     Returns:
         None
     '''
     
-    assert isinstance(df, pd.DataFrame)
+    assert isinstance(df, pd.DataFrame) and isinstance(title, str)
     
     pearson_corr_matrix = df.corr()
 
@@ -21,7 +22,7 @@ def plot_correlation_matrix(df: pd.DataFrame):
         x=df.columns,
         y=df.columns,
         color_continuous_scale="YlOrRd",
-        title="Correlation Matrix "
+        title="Correlation Matrix"
     )
 
     # Add annotations to display correlation values
@@ -37,4 +38,4 @@ def plot_correlation_matrix(df: pd.DataFrame):
 
     # Show the plot
     fig.show()
-    fig.write_html(f'results/corr.html')
+    fig.write_html(f'results/{title}.html')
