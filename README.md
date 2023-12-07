@@ -1,5 +1,43 @@
 # Analysis of EV Adoption in California
 
+Welcome to the Electric Vehicle Adoption Analysis project! This project aims to analyze and understand the trends in Electric Vehicle Adoption rates in California.
+
+## Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine.
+
+### Prerequisites
+
+Make sure you have the following installed on your machine:
+
+- Python (version 3.9>=)
+
+### Installation
+
+1. Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/yasho191/ECE143_EV_Adoption_Analysis
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd ECE143_EV_Adoption_Analysis
+   ```
+
+3. Install the required dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### Running the Analysis
+
+1. Open the `final_analysis.ipynb` notebook.
+
+2. Run the notebook cells to execute the analysis steps.
+
 ## Introducton
 
 Welcome to the "Electric Vehicle Adoption Analysis" project! In this comprehensive study, we delve into various facets of electric vehicle (EV) adoption in California, aiming to gain valuable insights into current trends and patterns. The project is structured around five key questions, each exploring different aspects of EV adoption.
@@ -32,7 +70,7 @@ We delve into the preferences for different types of alternative fuel vehicles, 
 
 In the final leg of our project, we embark on predictive modeling. Leveraging the power of linear regression and random forest regression, we attempt to forecast electric vehicle adoption based on a combination of demographic and economic factors. This predictive analysis adds a forward-looking dimension to our exploration.
 
-We consider 2 Machine learning models: 1. Linear Regression 2. Random Forest Regressor. We use only the demographic and economic features for the prediction. As we earlier explored that household income and level of education are highly correlated with eac other we also try to study the inmpact of using both these features or either one of these features for predictions. The experimental results are as follows
+We consider 2 Machine learning models: 1. Linear Regression 2. Random Forest Regressor. We use only the demographic and economic features for the prediction. As we earlier explored that household income and level of education are highly correlated with each other we also try to study the inmpact of using both these features or either one of these features for predictions. The experimental results are as follows
 
 ![Model Comparison](images/question5/comparison.png)
 
@@ -57,10 +95,19 @@ We consider 2 Machine learning models: 1. Linear Regression 2. Random Forest Reg
 
 5. **Feature Drop Impact:** The drop in R2 scores and the increase in MSE when removing features indicate the importance of considering multiple demographic and economic factors for accurate predictions. A holistic approach considering various aspects yields better results than relying on a single feature.
 
-6. **Feature Importance:** For both the models Linear Regression as well as Random Forest Regressor the Median Household Income and Level of Education are the Most importance features.
-
 ## Project Methodology
 
 Throughout the project, we employ a blend of geospatial analysis, correlation studies, scatter plots, and predictive modeling to comprehensively address each question. The diversity in our analytical approaches ensures a holistic understanding of the factors influencing electric vehicle adoption.
 
 Join us on this journey as we unravel the intricacies of electric vehicle adoption in California, combining data-driven insights with a keen focus on geographic, demographic, and economic dynamics. Let's uncover the trends shaping the future of sustainable transportation.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Mention any resources, tools, or datasets you used.
+- Give credit to contributors or authors of external code.
+
+Thank you for exploring the Electric Vehicle Adoption Analysis project! If you have any questions or feedback, feel free to contact us. Happy analyzing!
