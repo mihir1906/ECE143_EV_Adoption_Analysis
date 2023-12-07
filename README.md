@@ -70,7 +70,12 @@ We delve into the preferences for different types of alternative fuel vehicles, 
 
 In the final leg of our project, we embark on predictive modeling. Leveraging the power of linear regression and random forest regression, we attempt to forecast electric vehicle adoption based on a combination of demographic and economic factors. This predictive analysis adds a forward-looking dimension to our exploration.
 
-We consider 2 Machine learning models: 1. Linear Regression 2. Random Forest Regressor. We use only the demographic and economic features for the prediction. As we earlier explored that household income and level of education are highly correlated with each other we also try to study the inmpact of using both these features or either one of these features for predictions. The experimental results are as follows
+We consider 2 Machine learning models:
+
+1. Linear Regression
+2. Random Forest Regressor.
+
+We use only the demographic and economic features for the prediction. As we earlier explored that household income and level of education are highly correlated with each other we also try to study the inmpact of using both these features or either one of these features for predictions. The experimental results are as follows
 
 ![Model Comparison](images/question5/comparison.png)
 
@@ -107,7 +112,14 @@ This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LI
 
 ## Acknowledgments
 
-- Mention any resources, tools, or datasets you used.
-- Give credit to contributors or authors of external code.
+### Dataset
+
+Utilized in an article released on March 22, 2023, titled "Who purchases electric cars in California — and who opts against it?" the information originates from three distinct sources: government records, industry surveys, and consumer interviews. The comprehensive dataset, accessible in the ev-zipcode-demographics.csv file, delves into a myriad of demographic factors, providing insights into the diverse preferences and trends shaping the electric vehicle market in California. This multifaceted approach ensures a nuanced understanding of the factors influencing consumer choices in the dynamic landscape of sustainable transportation. The three sources are as follows:
+
+1. 2021 light-duty vehicle population from DMV via the California Energy Commission.
+2. 2021 5-year American Census Survey from the Census Bureau.
+3. Zillow Home Value Index, which represents the “typical” home value for a region, as of February 2023.
+
+[Dataset Link](https://github.com/CalMatters/ev-zipcode-demographics-data/tree/main)
 
 Thank you for exploring the Electric Vehicle Adoption Analysis project! If you have any questions or feedback, feel free to contact us. Happy analyzing!
